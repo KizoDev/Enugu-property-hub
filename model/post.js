@@ -14,15 +14,10 @@ const postSchema = new mongoose.Schema({
       required:true
   },
   photo:{
-    type:String
+    type:String,
+    required:true
 },
-    date:{
-        type:Date,
-        default:Date.now
-    },
-    Comment:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'comment'
-    }
-})
-module.experts = mongoose.model('Post', postSchema)
+  
+}, {timestamps:true}
+)
+module.exports = mongoose.model('Post', postSchema)

@@ -23,8 +23,8 @@ const signup = async (req, res) => {
     data:null
   })
   //hashpassword
-  const salt =  await bcrypt.gensalt(10)
-  const hashpassword = await bcrypt.hash(req.body.password, salt)
+  //const salt =  await bcrypt.gensalt(10)
+  const hashpassword = await bcrypt.hash(req.body.password, 10)
   // register new user
   const user = new User({
     name: req.body.name,

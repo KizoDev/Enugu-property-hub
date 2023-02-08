@@ -9,14 +9,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: true,
   },
+  resetToken: String,
+  expireToken:Date,
   email: {
     type: String,
     default: true,
   },
-  Date: {
-    type: Date,
-    default: Date.now,
-  },
-})
+  
+}, {timestamps:true})
 
 module.exports = mongoose.model('User', userSchema)

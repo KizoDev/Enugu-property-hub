@@ -10,17 +10,24 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
  const routercomment = require('./routes/comment');
  const routerget = require('./routes/get');
  const routergetuser = require('./routes/getuser');
+ const routerresetpassword = require('./routes/resetPassword');
+ const routerconversation = require('./routes/conversation');
+ const routermessage = require('./routes/message');
+
 // middleware
 
 app.use(express.json());
 
 // routes
 
-app.use('/api/v1/user', routeruser);
- app.use('/api/v1/post', routerpost);
- app.use('/api/v1/', routercomment);
- app.use('/api/v1/get', routerget);
- app.use('/api/v1/getuser', routergetuser);
+app.use('/user', routeruser);
+ app.use('/post', routerpost);
+ app.use('/', routercomment);
+ app.use('/get', routerget);
+ app.use('/getuser', routergetuser);
+ app.use('/', routerresetpassword);
+ app.use('/conversation', routerconversation);
+ app.use('/', routermessage);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
